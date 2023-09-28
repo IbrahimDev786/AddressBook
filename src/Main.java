@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -9,20 +10,21 @@ public class Main {
                 + " whose number you wish to retrieve: ");
         String name = scanner.nextLine().toUpperCase().trim();
 
-        String[] names = new String[3];
-        String[] number = new String[3];
-        names[0] = "BOB";
-        names[1] = "SALLY";
-        names[2] = "HODOR";
-        number[0] = "07970457470";
-        number[1] = "07415118642";
-        number[2] = "07903245098";
+
+        ArrayList<String> names = new ArrayList<>();
+        ArrayList<String> number = new ArrayList<>();
+        names.add("BOB");
+        names.add("SALLY");
+        names.add("HODOR");
+        number.add("07970457470");
+        number.add("07415118642");
+        number.add("07903245098");git
 
         boolean found = false;
 
-        for (int i = 0; i < names.length; i++) {
-            if (names[i].equals(name)) {
-                System.out.println("Number: " + number[i]);
+        for (int i = 0; i < names.size(); i++) {
+            if (names.get(i).equals(name)) {
+                System.out.println("Number: " + number.get(i));
                 found = true;
                 break;
             }
