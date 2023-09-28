@@ -10,21 +10,18 @@ public class Main {
                 + " whose number you wish to retrieve: ");
         String name = scanner.nextLine().toUpperCase().trim();
 
+        ArrayList<MakeInfo> contact = new ArrayList<>();
 
-        ArrayList<String> names = new ArrayList<>();
-        ArrayList<String> number = new ArrayList<>();
-        names.add("BOB");
-        names.add("SALLY");
-        names.add("HODOR");
-        number.add("07970457470");
-        number.add("07415118642");
-        number.add("07903245098");git
+        contact.add(new MakeInfo("BOB", "07970457470"));
+        contact.add(new MakeInfo("SALLY", "07415118642"));
+        contact.add(new MakeInfo("HODOR", "07903245098"));
+
 
         boolean found = false;
 
-        for (int i = 0; i < names.size(); i++) {
-            if (names.get(i).equals(name)) {
-                System.out.println("Number: " + number.get(i));
+        for (int i = 0; i < contact.size(); i++) {
+            if (contact.get(i).getName().equals(name)) {
+                System.out.println("Number: " + contact.get(i).getNumber());
                 found = true;
                 break;
             }
