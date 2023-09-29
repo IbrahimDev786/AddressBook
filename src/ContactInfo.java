@@ -1,19 +1,22 @@
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ContactInfo {
 
-    private ArrayList<MakeInfo> contacts = new ArrayList<>();
+    HashMap<String, String> contacts = new HashMap<String, String>();
 
     public ContactInfo() {
-        contacts.add(new MakeInfo("BOB", "07970457470"));
-        contacts.add(new MakeInfo("SALLY", "07415118642"));
-        contacts.add(new MakeInfo("HODOR", "07903245098"));
+        contacts.put("BOB", "07970457470");
+        contacts.put("SALLY", "07415118642");
+        contacts.put("HODOR", "07903245098");
     }
 
     public String getNumberByName(String name) {
-        for (MakeInfo contact : contacts) {
-            if (contact.getName().equals(name)) {
-                return contact.getNumber();
+        for (Map.Entry<String, String> entry : contacts.entrySet()) {
+            String contactName = entry.getKey();
+            String contactNumber = entry.getValue();
+            if (entry.getKey().equals(name)) {
+                return entry.getValue();
             }
         }
         return null;
